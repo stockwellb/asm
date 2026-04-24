@@ -1,7 +1,6 @@
-global _start
+%include "syscalls.inc"
 
-section .data
-        SYS_EXIT equ 60
+global _start
 
 section .text
 _start:
