@@ -24,10 +24,11 @@ All the notes here are about x86_64 ELF
 
 ## Some operations
     
+### add 
+    
+    add rax, rbx ; explicit registers
+
 ### multiply
 
     imul rax, rbx ; explicit registers
 
-### divide
-    
-    div rax, rbx ; explicit registers
