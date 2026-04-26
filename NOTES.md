@@ -32,3 +32,12 @@ All the notes here are about x86_64 ELF
 
     imul rax, rbx ; explicit registers
 
+### divide
+
+    - rdx:rax / rbx = ra x(quotient) rdx (remainder)
+    - important to remember to xor out rdx
+    - the dividend => rdx:rax
+    - the divisor e.g. => rbx
+    - the quotient => rax
+    - the remainer => rdx
+
