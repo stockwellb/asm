@@ -22,4 +22,12 @@ All the notes here are about x86_64 ELF
     - move the appropriate return code into the `rdi` register
     - make the syscall
 
+## Some operations
+    
+### multiply
 
+    imul rax, rbx ; explicit registers
+
+### divide
+    
+    div rax, rbx ; explicit registers
