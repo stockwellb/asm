@@ -8,9 +8,12 @@ _start:
         cmp rax, 10
         jne not_equal
         mov rdi, 1
+        jmp exit
 
 not_equal:
         mov rdi, 0
+
+exit:
         mov rax, SYS_EXIT
         syscall
         ret

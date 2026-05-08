@@ -9,9 +9,12 @@ _start:
         cmp rax, 10
         je equal_case
         mov rdi, 0
+        jmp exit
 
 equal_case:
         mov rdi, 1
+
+exit:
         mov rax, SYS_EXIT
         syscall
         ret
