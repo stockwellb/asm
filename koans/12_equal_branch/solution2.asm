@@ -16,4 +16,3 @@ not_equal:
 exit:
         mov rax, SYS_EXIT
         syscall
-        ret

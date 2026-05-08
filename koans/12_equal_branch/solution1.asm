@@ -17,5 +17,4 @@ equal_case:
 exit:
         mov rax, SYS_EXIT
         syscall
-        ret
 
