@@ -7,5 +7,4 @@ _start:
         mov rax, SYS_EXIT
         mov rdi, 42
         syscall
-        ret
 
