@@ -1,6 +1,11 @@
+%include "syscalls.inc"
+
 global _start
 
 section .text
 _start:
         xor eax, eax
-        ret
+        mov rax, SYS_EXIT
+        xor rdi, rdi
+        syscall
+

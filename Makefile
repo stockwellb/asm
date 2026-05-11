@@ -6,7 +6,7 @@ BINARIES      := $(TOPIC_SOURCES:.asm=)
 
 NASM      := nasm
 NASMFLAGS := -f elf64 -g -F dwarf -I lib/
-LD        := ld
+LD        := gcc
 
 .PHONY: all clean list
 
@@ -15,7 +15,7 @@ all: $(BINARIES)
 # Build any <dir>/<name> from <dir>/<name>.asm, linking in any lib objects
 %: %.asm $(LIB_OBJECTS)
 	$(NASM) $(NASMFLAGS) $< -o $@.o
-	$(LD) $@.o $(LIB_OBJECTS) -o $@
+	$(LD) $@.o $(LIB_OBJECTS) -o $@ -no-pie -nostartfiles
 
 # Lib objects
 lib/%.o: lib/%.asm
