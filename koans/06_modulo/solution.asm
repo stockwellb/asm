@@ -12,5 +12,4 @@ _start:
         mov rax, SYS_EXIT
         mov rdi, rdx
         syscall
-        ret
 
