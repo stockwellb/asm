@@ -9,13 +9,13 @@ section .data
 section .text
         _start:
         mov rbx, 0
-loop:
+print_loop:
         print_reg rbx_name, rbx
         cmp rbx, 5
         je end
 
         inc rbx
-        jmp loop
+        jmp print_loop
 
 end:
         mov rdi, rbx            ; exit code 5
