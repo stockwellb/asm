@@ -11,13 +11,14 @@ section .text
         mov rbx, 0
 loop:
         print_reg rbx_name, rbx
-        inc rbx
         cmp rbx, 5
-        jl end
+        je end
+
+        inc rbx
         jmp loop
 
 end:
-        mov rdi, rbx
+        mov rdi, rbx            ; exit code 5
         mov rax, SYS_EXIT
         syscall
 
