@@ -9,12 +9,11 @@ section .data
 section .text
         _start:
         mov rbx, 0
-        print_reg rbx_name, rbx
 loop:
-        inc rbx
         print_reg rbx_name, rbx
+        inc rbx
         cmp rbx, 5
-        jz end
+        jl end
         jmp loop
 
 end:
