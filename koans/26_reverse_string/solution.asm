@@ -29,7 +29,7 @@ reverse:
 
 reverse_loop:
         cmp r8, r9
-        je write
+        jge write
 
         mov al, [buf + r8]
         mov bl, [buf + r9]
