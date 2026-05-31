@@ -16,7 +16,7 @@ _start:
 
 load_loop:
         cmp rcx, str_len 
-        je reverse
+        jge reverse
 
         mov al, [str + rcx]
         mov [buf + rcx], al
