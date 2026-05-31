@@ -4,18 +4,18 @@ global _start
 
 section .data
         str: db "hello"
-        newline: db 10
         str_len: equ $ - str
+        newline: db 10
 
 section .bss
-        buf: resb str_len - 1
+        buf: resb str_len
 
 section .text
 _start:
         xor rcx, rcx
 
 load_loop:
-        cmp byte [str + rcx], 0
+        cmp rcx, str_len 
         je reverse
 
         mov al, [str + rcx]
