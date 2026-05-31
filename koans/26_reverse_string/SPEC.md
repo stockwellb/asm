@@ -1,8 +1,8 @@
-# Koan 26: Reverse String In Place (Capstone)
+# Koan 26: Reverse String In Place
 
 **Goal**: Copy a string from `.data` into a `.bss` buffer, reverse it in place with two pointers, then print it. For `"hello"`, output is `"olleh"`.
 
-**Practice**: the capstone. Two-pointer loop, byte loads/stores, midpoint termination, register discipline around syscalls. Everything you've drilled so far, combined.
+**Practice**: two-pointer loop, byte loads/stores, midpoint termination, register discipline around syscalls. Pulls together the memory work from 21–25. (The set's real finale is koan 30.)
 
 **Success**: the program prints the reversed string.
 
