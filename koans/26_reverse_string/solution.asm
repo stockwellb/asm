@@ -3,11 +3,12 @@
 global _start
 
 section .data
-        str: db "hello", 0
+        str: db "hello"
+        newline: db 10
         str_len: equ $ - str
 
 section .bss
-        buf: resb str_len
+        buf: resb str_len - 1
 
 section .text
 _start:
@@ -23,9 +24,8 @@ load_loop:
         jmp load_loop
 
 reverse:
-        mov byte [buf + rcx], 10
         xor r8, r8
-        mov r9, str_len - 2
+        mov r9, str_len - 1
 
 reverse_loop:
         cmp r8, r9
@@ -47,6 +47,12 @@ write:
         mov rdi, STDOUT
         mov rsi, buf
         mov rdx, str_len
+        syscall
+
+        mov rax, SYS_WRITE
+        mov rdi, STDOUT
+        mov rsi, newline
+        mov rdx, 1
         syscall
 
 done:
